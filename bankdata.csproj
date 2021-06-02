@@ -91,13 +91,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BankModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Commands\DepositOnAGivenAccount.cs" />
+    <Compile Include="Events\DomainEvents.cs" />
+    <Compile Include="Services\DepositOnAGivenAccount.cs" />
     <Compile Include="Models\IBankOperation.cs" />
     <Compile Include="Owner.cs">
       <DependentUpon>BankModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specs\AuthorizedOperationAsAUserSpec.cs" />
+    <Compile Include="Specs\AuthorizedWithdrawalSpec.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

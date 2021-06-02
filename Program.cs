@@ -1,4 +1,4 @@
-﻿using bankdata.Commands;
+﻿using bankdata.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace bankdata
     {
         static void Main(string[] args)
         {
-            Owner owner = new Owner();
+           /* Owner owner = new Owner();
             Account account = new Account();
             using (var context = new bankEntities1())
             {
@@ -25,7 +25,7 @@ namespace bankdata
 
             Console.WriteLine("Update");
             DepositOnAGivenAccount deposit = new DepositOnAGivenAccount(account , owner, 1000);
-            deposit.Push();
+            deposit.Push();*/
             //
             //
             //Console.WriteLine(account.Id + " " + account.balance);

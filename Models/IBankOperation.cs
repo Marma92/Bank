@@ -11,7 +11,7 @@ namespace bankdata.Models
 
         Account account { get; }
         Owner owner { get; }
-        float amount { get; }
+        double amount { get; }
 
     }
 }

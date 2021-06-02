@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bankdata.Commands
+namespace bankdata.Services
 {
     public class DepositOnAGivenAccount : IBankOperation
     {
@@ -13,16 +13,16 @@ namespace bankdata.Commands
 
         Owner IBankOperation.owner => owner;
 
-        float IBankOperation.amount => amount;
+        double IBankOperation.amount => amount;
 
         Account account;
 
         Owner owner;
 
-        float amount;
+        double amount;
 
 
-        public DepositOnAGivenAccount(Account account, Owner owner, float amount)
+        public DepositOnAGivenAccount(Account account, Owner owner, double amount)
         {
             this.account = account;
             this.owner = owner;
