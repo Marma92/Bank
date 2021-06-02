@@ -1,0 +1,15 @@
+C:\Users\marma\source\repos\bankdata\bin\Debug\bank.ldf
+C:\Users\marma\source\repos\bankdata\bin\Debug\bank.mdf
+C:\Users\marma\source\repos\bankdata\bin\Debug\bank_log.ldf
+C:\Users\marma\source\repos\bankdata\bin\Debug\bankdata.exe.config
+C:\Users\marma\source\repos\bankdata\bin\Debug\bankdata.exe
+C:\Users\marma\source\repos\bankdata\bin\Debug\bankdata.pdb
+C:\Users\marma\source\repos\bankdata\bin\Debug\EntityFramework.dll
+C:\Users\marma\source\repos\bankdata\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\marma\source\repos\bankdata\bin\Debug\EntityFramework.xml
+C:\Users\marma\source\repos\bankdata\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\marma\source\repos\bankdata\obj\Debug\bankdata.csproj.AssemblyReference.cache
+C:\Users\marma\source\repos\bankdata\obj\Debug\bankdata.csproj.CoreCompileInputs.cache
+C:\Users\marma\source\repos\bankdata\obj\Debug\bankdata.csproj.CopyComplete
+C:\Users\marma\source\repos\bankdata\obj\Debug\bankdata.exe
+C:\Users\marma\source\repos\bankdata\obj\Debug\bankdata.pdb

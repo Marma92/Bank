@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bankModelStoreContainer" CdmEntityContainer="bankEntities1">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="bankModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="Id_owner" ColumnName="Id_owner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Account_History">
+      <EntityTypeMapping TypeName="bankModel.Account_History">
+        <MappingFragment StoreEntitySet="Account_History">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_account" ColumnName="Id_account" />
+          <ScalarProperty Name="operation_type" ColumnName="operation_type" />
+          <ScalarProperty Name="operation_time" ColumnName="operation_time" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Owners">
+      <EntityTypeMapping TypeName="bankModel.Owner">
+        <MappingFragment StoreEntitySet="Owner">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id_account1" ColumnName="Id_account1" />
+          <ScalarProperty Name="Id_account2" ColumnName="Id_account2" />
+          <ScalarProperty Name="Id_account3" ColumnName="Id_account3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
