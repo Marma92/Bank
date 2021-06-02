@@ -20,5 +20,14 @@ namespace bankdata
         public System.DateTime operation_time { get; set; }
         public double amount { get; set; }
         public double balance { get; set; }
+
+        public Account_History(int Id_account, string operation_type, System.DateTime operation_time, double amount, double balance)
+        {
+            this.Id_account = Id_account;
+            this.operation_type = operation_type;
+            this.operation_time = operation_time;
+            this.amount = amount;
+            this.balance = balance;
+        }
     }
 }

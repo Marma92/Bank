@@ -1,4 +1,5 @@
-﻿using bankdata.Models;
+﻿using bankdata.Events;
+using bankdata.Models;
 using bankdata.Specs;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,9 @@ namespace bankdata.Services
                     result.balance = result.balance + amount;
                     if (context.SaveChanges() > 0)
                     {
+                        Account_History ah = new Account_History(this.account.Id, "deposit", DateTime.Now, this.amount,result.balance);
+                        DomainEvent de = new DomainEvent(ah);
+                        de.Push();
                         Console.WriteLine("Successfuly updated! ");
                     }
                 }

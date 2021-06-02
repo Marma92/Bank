@@ -91,7 +91,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BankModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Events\DomainEvents.cs" />
+    <Compile Include="Events\DomainEvent.cs" />
+    <Compile Include="Services\RetrieveOperationsHistory.cs" />
     <Compile Include="Services\WithdrawalOnAGivenAccount.cs" />
     <Compile Include="Services\DepositOnAGivenAccount.cs" />
     <Compile Include="Models\IBankOperation.cs" />
