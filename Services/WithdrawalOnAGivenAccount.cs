@@ -7,8 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace bankdata.Services
-{
-    public class DepositOnAGivenAccount : IBankOperation
+{   
+
+    public class WithdrawalOnAGivenAccount : IBankOperation
     {
         Account IBankOperation.account => account;
 
@@ -23,22 +24,15 @@ namespace bankdata.Services
         double amount;
 
 
-        public DepositOnAGivenAccount(Account account, Owner owner, double amount)
+        public WithdrawalOnAGivenAccount(Account account, Owner owner, double amount)
         {
             AuthorizedAmountForAnOperationSpec aafaos = new AuthorizedAmountForAnOperationSpec();
-        //    AuthorizedOperationAsAUserSpec aoaaus = new AuthorizedOperationAsAUserSpec(owner, account);
             if (aafaos.isSatisfiedBy(amount))
             {
-        /*            if (aoaaus.isAuthorized())
-                {*/
-                    this.account = account;
-                    this.owner = owner;
-                    this.amount = amount;
-/*                }*/
-/*                else
-                {
-                    throw new NotYourAccountException();
-                }*/
+
+                this.account = account;
+                this.owner = owner;
+                this.amount = amount;
             }
             else
             {
@@ -51,10 +45,10 @@ namespace bankdata.Services
 
             using (var context = new bankEntities1())
             {
-                var result = context.Accounts.SingleOrDefault(a => a.Id == this.account.Id);   
+                var result = context.Accounts.SingleOrDefault(a => a.Id == this.account.Id);
                 if (result != null)
                 {
-                    result.balance = result.balance + amount;
+                    result.balance = result.balance - amount;
                     if (context.SaveChanges() > 0)
                     {
                         Console.WriteLine("Successfuly updated! ");
