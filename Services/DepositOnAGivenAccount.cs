@@ -27,24 +27,26 @@ namespace bankdata.Services
         public DepositOnAGivenAccount(Account account, Owner owner, double amount)
         {
             AuthorizedAmountForAnOperationSpec aafaos = new AuthorizedAmountForAnOperationSpec();
-        //    AuthorizedOperationAsAUserSpec aoaaus = new AuthorizedOperationAsAUserSpec(owner, account);
-            if (aafaos.isSatisfiedBy(amount))
+            AuthorizedOperationAsAUserSpec aoaaus = new AuthorizedOperationAsAUserSpec(owner, account);
+
+            if (aoaaus.isAuthorized())
             {
-        /*            if (aoaaus.isAuthorized())
-                {*/
+                if (aafaos.isSatisfiedBy(amount))
+                {
                     this.account = account;
                     this.owner = owner;
                     this.amount = amount;
-/*                }*/
-/*                else
+                }
+                else
                 {
-                    throw new NotYourAccountException();
-                }*/
+                    throw new ArgumentOutOfRangeException();
+                }
             }
             else
             {
-                throw new ArgumentOutOfRangeException();
+                throw new NotYourAccountException();
             }
+
         }
 
         public void Push()

@@ -22,14 +22,13 @@ namespace bankdata.Specs
 
         public bool isAuthorized()
         {
-            if (this.owner.Id == this.account.Id_owner)
+            Console.WriteLine("DEBUG : Owner ID:" + owner.Id + " Account Id_Owner: " + account.Id_owner);
+            if (owner.Id == account.Id_owner)
             {
-                Console.WriteLine("DEBUG : Owner ID:"+ this.owner.Id +" Account Id_Owner: " + account.Id_owner);
+               
                 return true;
             }
-
             return false;
-
         }
     }
 }

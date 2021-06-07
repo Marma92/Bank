@@ -39,7 +39,8 @@ namespace BankDataTest
                 previousBalance = account.balance;
                 Console.WriteLine("Account ID:  "+account.Id + "Balance: " +account.balance);
             }
-             
+            owner.Id = account.Id_owner; 
+
             DepositOnAGivenAccount deposit = new DepositOnAGivenAccount(account, owner, amount);
             deposit.Push();
 
@@ -82,7 +83,8 @@ namespace BankDataTest
                 previousBalance = account.balance;
                 Console.WriteLine("Account ID:  " + account.Id + "Balance: " + account.balance);
             }
-            DepositOnAGivenAccount deposit = new DepositOnAGivenAccount(account, owner, amount);
+                owner.Id = account.Id_owner;
+                DepositOnAGivenAccount deposit = new DepositOnAGivenAccount(account, owner, amount);
             }
  
             //Assert
@@ -90,14 +92,15 @@ namespace BankDataTest
         }
         
         //Test if the user trying to deposit money can do it on an account it does not own
-        //[Test]
-/*        public void AreTheAccountProtectedFromAStranger(
-            [Values (3,1,2)] int accountId,
-            [Values (1,2,3)] int UserId)
+        [Test]
+        public void IsTheAccountProtectedFromAStranger(
+            [Values(3, 1, 2)] int accountId,
+            [Values(1, 2, 3)] int UserId)
         {
             Owner owner = new Owner();
             Account account = new Account();
             double previousBalance;
+            owner.Id = UserId;
 
             using (var context = new bankEntities1())
             {
@@ -110,10 +113,10 @@ namespace BankDataTest
                 Console.WriteLine("Account ID:  " + account.Id + "Balance: " + account.balance);
             }
 
-            DepositOnAGivenAccount deposit = new DepositOnAGivenAccount(account, owner, 100);
-            Assert.Throws<NotYourAccountException>(() => deposit.Push());
             
-        }*/
+            Assert.Throws<NotYourAccountException>(() =>  new DepositOnAGivenAccount(account, owner, 100));
+
+        }
 
         /*US 2:
         In order to retrieve some or all of my savings

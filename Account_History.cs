@@ -29,5 +29,28 @@ namespace bankdata
             this.amount = amount;
             this.balance = balance;
         }
+
+
+        public Account_History()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return "Account n°: " + Id_account + "\nOperation's nature: " + operation_type + "\nTimestamp: " + operation_time + "\nAmount :" + amount + "\nBalance: " + balance;
+        }
+
+        public bool Equals(Account_History obj)
+        {
+            if ( obj.Id_account == this.Id_account && obj.operation_type.Trim() == this.operation_type.Trim() && obj.operation_time == this.operation_time && obj.amount == this.amount && obj.balance == this.balance)
+            {
+                return true;
+            }
+
+            return false;
+            
+        }
+
     }
 }

@@ -27,7 +27,6 @@ namespace bankdata.Services
                 foreach (var operation in operations)
                 {
                     Console.WriteLine("Operation n°" + operation.Id + " on Account n° " + operation.Id_account + " is a " + operation.operation_type + " of " + operation.amount + "€ at " + operation.operation_time + ", letting a balance of" + operation.balance + "€.");
-
                 }
             }
         }
